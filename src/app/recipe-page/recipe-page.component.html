@@ -1,0 +1,9 @@
+<div class="recipe-page">
+    <h1>{{ recipe.name }}</h1>
+    <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" class="recipe-image" />
+    <p>{{ recipe.description }}</p>
+    <h2>Ingrediënten:</h2>
+    <li *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }}
+      </li>
+  </div>

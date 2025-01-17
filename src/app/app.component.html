@@ -1,11 +1,17 @@
 <div class="container">
-  <h1 class="page-title">Receptenlijst</h1>
+  <h1 class="page-title">
+    <a [routerLink]="['/']">Receptenlijst</a>
+  </h1>
   <div class="recipe-list">
-    <mat-card *ngFor="let recipe of recipes" class="recipe-card">
-      <mat-card-header>
-        <mat-card-title>{{ recipe.name }}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image [src]="recipe.imageUrl" [alt]="recipe.name" />
+    <mat-card *ngFor="let recipe of recipes; let i = index" class="recipe-card">
+      <a [routerLink]="['/recipe', i]" class="recipe-link">
+        <mat-card-header>
+          <mat-card-title>{{ recipe.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="recipe.imageUrl" [alt]="recipe.name" />
+      </a>
     </mat-card>
   </div>
 </div>
+
+<router-outlet></router-outlet>
